@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadoras</title>
+    <link rel="stylesheet" href="style.css">
+
+
+</head>
+
+<body>
+   <div class="container">
+    <h1>Calculadora</h1>
+    <div class="calculadora">
+        <input class="dia" id="dia" type="number" max="31" placeholder="Dia:">
+        <select class="mes" name="mes" id="mes">
+            <option value="1">Janeiro</option>
+            <option value="2">Fevereiro</option>
+            <option value="3">Março</option>
+            <option value="4">Abril</option>
+            <option value="5">Maio</option>
+            <option value="6">Junho</option>
+            <option value="7">Julho</option>
+            <option value="8">Agosto</option>
+            <option value="9">Setembro</option>
+            <option value="10">Outubro</option>
+            <option value="11">Novembro</option>
+            <option value="12">Dezembro</option>
+
+        </select>
+        <input class="ano" id="ano" type="number" max="2026">
+    </div>
+
+    <button class="botao" onclick="calcular()" id="resultado">idade</button>
+   </div>
+
+ <script>
+function calcular() {
+    let dia = document.getElementById("dia").value;
+    let mes = document.getElementById("mes").value;
+    let ano = document.getElementById("ano").value;
+
+    let dataNascimento = new Date(ano, mes - 1, dia);
+    let dataMinima = new Date(2000, 0, 1);
+
+    if (dataNascimento < dataMinima) {
+        alert("Data inválida!");
+    } else {
+        alert("Data válida!");
+    }
+}
+</script>
+
+</body>
+</html>
